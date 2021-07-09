@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Simon Says</string>
+    <string name="simon_says">Simon Says: </string>
+</resources>

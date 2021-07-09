@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.colors.simonsays.ui.main.MainViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mainBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:background_color="@{viewmodel.backgroundColor}">
+
+        <TextView
+            android:id="@+id/tvLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@{viewmodel.level}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSimonSays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center"
+            android:text="@{viewmodel.simonSays}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_24ssp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSimonSays"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/button1"
+                style="@style/buttonStyle"
+                android:background="@color/purple_button_color"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="@{() -> viewmodel.clickButton1()}"
+                android:text="@{viewmodel.textButton1}"
+                app:text_color="@{viewmodel.textColorButton1}" />
+
+            <TextView
+                android:id="@+id/button2"
+                style="@style/buttonStyle"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:background="@color/orange_button_color"
+                android:onClick="@{() -> viewmodel.clickButton2()}"
+                android:text="@{viewmodel.textButton2}"
+                app:text_color="@{viewmodel.textColorButton2}" />
+
+            <TextView
+                android:id="@+id/button3"
+                style="@style/buttonStyle"
+                android:background="@color/green_button_color"
+                android:onClick="@{() -> viewmodel.clickButton3()}"
+                android:text="@{viewmodel.textButton3}"
+                app:text_color="@{viewmodel.textColorButton3}" />
+
+            <TextView
+                android:id="@+id/button4"
+                style="@style/buttonStyle"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:background="@color/blue_button_color"
+                android:onClick="@{() -> viewmodel.clickButton4()}"
+                android:text="@{viewmodel.textButton4}"
+                app:text_color="@{viewmodel.textColorButton4}" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
+
